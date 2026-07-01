@@ -1,5 +1,136 @@
 {
-  "generated_at": "1970-01-01T00:00:00+00:00",
-  "count": 0,
-  "tasks": []
+  "generated_at": "2026-07-01T04:14:58.591631+00:00",
+  "count": 13,
+  "tasks": [
+    {
+      "key": "TH-17",
+      "summary": "デバッグ用パラメータクラスを移植する",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-06-26",
+      "due_date": "2026-06-29",
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-17"
+    },
+    {
+      "key": "TH-15",
+      "summary": "Enemyクラスの作成",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": "2026-06-26",
+      "due_date": null,
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-15"
+    },
+    {
+      "key": "TH-16",
+      "summary": "デバッグツール",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-16"
+    },
+    {
+      "key": "TH-14",
+      "summary": "ゲームロジック",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-14"
+    },
+    {
+      "key": "TH-12",
+      "summary": "移動",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": "2026-06-26",
+      "due_date": null,
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-12"
+    },
+    {
+      "key": "TH-13",
+      "summary": "エネミー",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-13"
+    },
+    {
+      "key": "TH-11",
+      "summary": "プレイヤー",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-11"
+    },
+    {
+      "key": "TH-6",
+      "summary": "エンジンのエラーを修正する",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-06-15",
+      "due_date": "2026-06-23",
+      "assignee": "LE4B_20_ハギワラ_ヒビキ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-6"
+    },
+    {
+      "key": "TH-7",
+      "summary": "サブモジュールを登録する",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-06-18",
+      "due_date": "2026-06-24",
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-7"
+    },
+    {
+      "key": "TH-10",
+      "summary": "仕様書を作る (optional)",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-10"
+    },
+    {
+      "key": "TH-9",
+      "summary": "ライトニングトーク用スライドを作る",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": "2026-06-18",
+      "due_date": "2026-06-25",
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-9"
+    },
+    {
+      "key": "TH-8",
+      "summary": "企画",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-8"
+    },
+    {
+      "key": "TH-5",
+      "summary": "開発環境の構築",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-5"
+    }
+  ]
 }
