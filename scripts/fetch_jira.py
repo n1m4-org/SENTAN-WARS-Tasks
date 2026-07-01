@@ -40,7 +40,7 @@ def fetch_all_issues() -> list:
     # 2025年に Jira Cloud の旧検索API（/rest/api/3/search）が廃止され、
     # 新しい /rest/api/3/search/jql（nextPageToken方式）に統一されました。
     base_url = f"https://{JIRA_DOMAIN}/rest/api/3/search/jql"
-    fields = ["summary", "status", "assignee", "duedate"]
+    fields = ["summary", "status", "assignee", "duedate", "issuetype", "parent"]
     if JIRA_START_DATE_FIELD:
         fields.append(JIRA_START_DATE_FIELD)
 
@@ -84,10 +84,26 @@ def to_public_record(issue: dict) -> dict:
     f = issue.get("fields", {})
     assignee = f.get("assignee")
     status = f.get("status") or {}
+    issuetype = f.get("issuetype") or {}
+    parent = f.get("parent") or {}
 
     start_date = None
     if JIRA_START_DATE_FIELD:
         start_date = f.get(JIRA_START_DATE_FIELD)
+
+    # issue検索結果の issuetype には hierarchyLevel が含まれないことがあるため、
+    # subtask フラグや名前一致でエピック判定をフォールバックする。
+    hierarchy_level = issuetype.get("hierarchyLevel")
+    issuetype_name = issuetype.get("name") or ""
+    if hierarchy_level is None:
+        if issuetype.get("subtask"):
+            hierarchy_level = -1
+        elif issuetype_name.lower() == "epic":
+            hierarchy_level = 1
+        else:
+            hierarchy_level = 0
+
+    is_epic = hierarchy_level == 1 or issuetype_name.lower() == "epic"
 
     return {
         "key": issue.get("key"),
@@ -98,6 +114,9 @@ def to_public_record(issue: dict) -> dict:
         "due_date": f.get("duedate"),
         "assignee": assignee.get("displayName") if assignee else None,
         "url": f"https://{JIRA_DOMAIN}/browse/{issue.get('key')}",
+        "issue_type_name": issuetype.get("name"),
+        "is_epic": is_epic,
+        "parent_key": parent.get("key"),
     }
 
 
