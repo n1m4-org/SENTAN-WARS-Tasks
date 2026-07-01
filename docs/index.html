@@ -13,6 +13,16 @@
     --todo: #5c6670;
     --progress: #c97d2c;
     --done: #5b7a5c;
+    --epic-1: #6d4fc9;
+    --epic-2: #1a73b5;
+    --epic-3: #b5406a;
+    --epic-4: #1f8a63;
+    --epic-5: #c9762f;
+    --epic-6: #3b6fd6;
+    --epic-7: #a5388a;
+    --epic-8: #4a7a2b;
+    --unclassified: #8b8574;
+    --today-line: #1554b3;
     --mono: "SFMono-Regular", "JetBrains Mono", Consolas, Menlo, monospace;
     --sans: -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
   }
@@ -209,23 +219,53 @@
 
   .tl-groups { position: relative; margin-top: 0.5rem; }
 
+  .tl-week-gridline {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(28,27,24,0.06);
+    z-index: 0;
+  }
+
   .tl-gridline {
     position: absolute;
     top: 0;
     bottom: 0;
     border-left: 1px dashed var(--rule);
+    z-index: 1;
   }
 
-  .tl-group { border-bottom: 1px solid var(--rule); padding: 0.7rem 0; position: relative; }
+  .tl-today-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--today-line);
+    box-shadow: 0 0 0 1px rgba(21,84,179,0.15);
+    z-index: 2;
+  }
+
+  .tl-group { border-bottom: 1px solid var(--rule); padding: 0.7rem 0; position: relative; z-index: 1; }
   .tl-group:last-child { border-bottom: none; }
 
   .tl-group-header {
     display: flex;
-    gap: 0.6rem;
-    align-items: baseline;
+    gap: 0.5rem;
+    align-items: center;
     padding-left: 200px;
+    padding-bottom: 0.3rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
+    border-bottom: 2px solid var(--epic-color, var(--rule));
+  }
+
+  .tl-epic-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    background: var(--epic-color, var(--ink-soft));
+    flex-shrink: 0;
   }
 
   .tl-row { display: flex; align-items: center; min-height: 1.9rem; }
@@ -241,6 +281,21 @@
     gap: 0.4rem;
     align-items: baseline;
   }
+
+  .tl-status-pill {
+    display: inline-block;
+    padding: 0.05rem 0.45rem;
+    border-radius: 999px;
+    font-size: 0.64rem;
+    line-height: 1.5;
+    color: #fff;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .tl-status-pill.status-new { background: var(--todo); }
+  .tl-status-pill.status-indeterminate { background: var(--progress); }
+  .tl-status-pill.status-done { background: var(--done); }
 
   .tl-row-summary { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
@@ -296,7 +351,7 @@
 
     .tl-scale, .tl-group-header, .tl-undated { margin-left: 0; padding-left: 0; }
     .tl-row { flex-direction: column; align-items: stretch; gap: 0.25rem; }
-    .tl-row-label { width: auto; white-space: normal; }
+    .tl-row-label { width: auto; white-space: normal; flex-wrap: wrap; }
     .tl-row-track { height: 0.8rem; }
   }
 
@@ -442,6 +497,15 @@
   function endOfMonth(d) { return new Date(d.getFullYear(), d.getMonth() + 1, 0); }
   function addMonths(d, n) { return new Date(d.getFullYear(), d.getMonth() + n, d.getDate()); }
 
+  function startOfWeekMonday(d) {
+    const r = new Date(d);
+    const day = r.getDay();
+    const diff = day === 0 ? -6 : 1 - day;
+    r.setDate(r.getDate() + diff);
+    r.setHours(0, 0, 0, 0);
+    return r;
+  }
+
   function computeDateRange(tasks) {
     const dates = [];
     for (const t of tasks) {
@@ -514,6 +578,24 @@
     return groups;
   }
 
+  const EPIC_PALETTE = [
+    "var(--epic-1)", "var(--epic-2)", "var(--epic-3)", "var(--epic-4)",
+    "var(--epic-5)", "var(--epic-6)", "var(--epic-7)", "var(--epic-8)",
+  ];
+  const UNCLASSIFIED_COLOR = "var(--unclassified)";
+
+  function assignEpicColors(groups) {
+    let i = 0;
+    for (const g of groups) {
+      if (g.key === "__unclassified__") {
+        g.color = UNCLASSIFIED_COLOR;
+      } else {
+        g.color = EPIC_PALETTE[i % EPIC_PALETTE.length];
+        i++;
+      }
+    }
+  }
+
   function buildMonthTicks(range) {
     const ticks = [];
     let cur = startOfMonth(range.min);
@@ -524,20 +606,62 @@
     return ticks;
   }
 
-  function timelineBarHtml(task, range) {
+  function buildWeekTicks(range) {
+    const ticks = [];
+    let cur = startOfWeekMonday(range.min);
+    while (cur <= range.max) {
+      ticks.push({ date: new Date(cur), percent: toPercent(cur, range) });
+      cur = addDays(cur, 7);
+    }
+    return ticks;
+  }
+
+  function computeTodayPercent(range) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (today < range.min || today > range.max) return null;
+    return toPercent(today, range);
+  }
+
+  function computeEpicRollupGeometry(group, range) {
+    const dated = group.items.filter(t => t.start_date || t.due_date);
+
+    if (dated.length) {
+      const lowerCandidates = dated.map(t => new Date(t.start_date || t.due_date).getTime());
+      const upperCandidates = dated.map(t => new Date(t.due_date || t.start_date).getTime());
+      const s = new Date(Math.min(...lowerCandidates));
+      const e = new Date(Math.max(...upperCandidates));
+      const left = toPercent(s, range);
+      const right = toPercent(e, range);
+      const width = Math.max(right - left, 0.6);
+      return { kind: "rollup", left, width, start: s, due: e };
+    }
+
+    if (group.epic) {
+      const own = computeBarGeometry(group.epic, range);
+      if (own.kind !== "none") {
+        return { ...own, start: new Date(group.epic.start_date || group.epic.due_date), due: new Date(group.epic.due_date || group.epic.start_date) };
+      }
+    }
+
+    return { kind: "none" };
+  }
+
+  function timelineBarHtml(task, range, epicColor) {
     const geo = computeBarGeometry(task, range);
     if (geo.kind === "none") return null;
-    const color = STATUS_COLOR[task.status_category] || STATUS_LABEL_FALLBACK;
     const cls = ["tl-bar"];
     if (geo.kind !== "full") cls.push("tentative");
+    const pillClass = `tl-status-pill status-${task.status_category || "new"}`;
     return `
       <div class="tl-row">
         <div class="tl-row-label">
           <span class="task-key"><a href="${task.url}" target="_blank" rel="noopener">${task.key}</a></span>
+          <span class="${pillClass}">${escapeHtml(task.status || "")}</span>
           <span class="tl-row-summary">${escapeHtml(task.summary || "—")}</span>
         </div>
         <div class="tl-row-track">
-          <div class="${cls.join(' ')}" style="left:${geo.left}%; width:${geo.width}%; background-color:${color};"
+          <div class="${cls.join(' ')}" style="left:${geo.left}%; width:${geo.width}%; background-color:${epicColor};"
                title="${escapeHtml(task.status || '')} ${fmtDate(task.start_date)} 〜 ${fmtDate(task.due_date)}"></div>
         </div>
       </div>`;
@@ -545,22 +669,22 @@
 
   function renderTimelineGroup(group, range) {
     const title = group.epic ? (group.epic.summary || group.epic.key) : "未分類";
-    const rows = group.items.map(t => timelineBarHtml(t, range)).filter(Boolean).join("");
+    const rows = group.items.map(t => timelineBarHtml(t, range, group.color)).filter(Boolean).join("");
     const undated = group.items.filter(t => !t.start_date && !t.due_date);
 
     let epicBarHtml = "";
     if (group.epic) {
-      const geo = computeBarGeometry(group.epic, range);
+      const geo = computeEpicRollupGeometry(group, range);
       if (geo.kind !== "none") {
-        const color = STATUS_COLOR[group.epic.status_category] || STATUS_LABEL_FALLBACK;
         const cls = ["tl-bar", "epic"];
-        if (geo.kind !== "full") cls.push("tentative");
+        if (geo.kind === "tentative-due" || geo.kind === "tentative-start") cls.push("tentative");
+        const rollupNote = geo.kind === "rollup" ? "（子タスクの日程から算出）" : "";
         epicBarHtml = `
           <div class="tl-row">
             <div class="tl-row-label"></div>
             <div class="tl-row-track">
-              <div class="${cls.join(' ')}" style="left:${geo.left}%; width:${geo.width}%; background-color:${color};"
-                   title="${escapeHtml(group.epic.status || '')} ${fmtDate(group.epic.start_date)} 〜 ${fmtDate(group.epic.due_date)}"></div>
+              <div class="${cls.join(' ')}" style="left:${geo.left}%; width:${geo.width}%; background-color:${group.color};"
+                   title="${fmtDate(geo.start)} 〜 ${fmtDate(geo.due)}${rollupNote}"></div>
             </div>
           </div>`;
       }
@@ -576,7 +700,8 @@
 
     return `
       <section class="tl-group">
-        <header class="tl-group-header">
+        <header class="tl-group-header" style="--epic-color:${group.color}">
+          <span class="tl-epic-dot" aria-hidden="true"></span>
           <span>${escapeHtml(title)}</span>
           ${group.epic ? `<span class="task-key"><a href="${group.epic.url}" target="_blank" rel="noopener">${group.epic.key}</a></span>` : ""}
         </header>
@@ -595,20 +720,29 @@
     }
 
     const groups = buildTimelineGroups(data.tasks);
-    const ticks = buildMonthTicks(range);
+    assignEpicColors(groups);
+    const monthTicks = buildMonthTicks(range);
+    const weekTicks = buildWeekTicks(range);
+    const todayPercent = computeTodayPercent(range);
 
     const scaleHtml = `
       <div class="tl-scale">
-        ${ticks.map(tk => `<div class="tl-tick" style="left:${tk.percent}%"><span>${tk.date.getFullYear()}-${String(tk.date.getMonth() + 1).padStart(2, '0')}</span></div>`).join("")}
+        ${monthTicks.map(tk => `<div class="tl-tick" style="left:${tk.percent}%"><span>${tk.date.getFullYear()}-${String(tk.date.getMonth() + 1).padStart(2, '0')}</span></div>`).join("")}
       </div>`;
 
-    const gridLinesHtml = ticks.map(tk => `<div class="tl-gridline" style="left:${tk.percent}%"></div>`).join("");
+    const weekGridHtml = weekTicks.map(tk => `<div class="tl-week-gridline" style="left:${tk.percent}%"></div>`).join("");
+    const monthGridHtml = monthTicks.map(tk => `<div class="tl-gridline" style="left:${tk.percent}%"></div>`).join("");
+    const todayLineHtml = todayPercent !== null
+      ? `<div class="tl-today-line" style="left:${todayPercent}%" title="本日"></div>`
+      : "";
 
     wrap.innerHTML = `
       <div class="tl-container">
         ${scaleHtml}
         <div class="tl-groups">
-          ${gridLinesHtml}
+          ${weekGridHtml}
+          ${monthGridHtml}
+          ${todayLineHtml}
           ${groups.map(g => renderTimelineGroup(g, range)).join("")}
         </div>
       </div>`;
