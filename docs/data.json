@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T14:22:07.608407+00:00",
+  "generated_at": "2026-07-01T15:40:05.633477+00:00",
   "count": 13,
   "tasks": [
     {
@@ -10,7 +10,10 @@
       "start_date": "2026-06-26",
       "due_date": "2026-06-29",
       "assignee": "nima",
-      "url": "https://nimaa2.atlassian.net/browse/TH-17"
+      "url": "https://nimaa2.atlassian.net/browse/TH-17",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-16"
     },
     {
       "key": "TH-15",
@@ -20,7 +23,10 @@
       "start_date": "2026-06-26",
       "due_date": null,
       "assignee": "ヤマグチ_タクト",
-      "url": "https://nimaa2.atlassian.net/browse/TH-15"
+      "url": "https://nimaa2.atlassian.net/browse/TH-15",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
     },
     {
       "key": "TH-16",
@@ -30,7 +36,10 @@
       "start_date": null,
       "due_date": null,
       "assignee": null,
-      "url": "https://nimaa2.atlassian.net/browse/TH-16"
+      "url": "https://nimaa2.atlassian.net/browse/TH-16",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
     },
     {
       "key": "TH-14",
@@ -40,7 +49,10 @@
       "start_date": null,
       "due_date": null,
       "assignee": "nima",
-      "url": "https://nimaa2.atlassian.net/browse/TH-14"
+      "url": "https://nimaa2.atlassian.net/browse/TH-14",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
     },
     {
       "key": "TH-12",
@@ -50,7 +62,10 @@
       "start_date": "2026-06-26",
       "due_date": null,
       "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-12"
+      "url": "https://nimaa2.atlassian.net/browse/TH-12",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-11"
     },
     {
       "key": "TH-13",
@@ -60,7 +75,10 @@
       "start_date": null,
       "due_date": null,
       "assignee": "ヤマグチ_タクト",
-      "url": "https://nimaa2.atlassian.net/browse/TH-13"
+      "url": "https://nimaa2.atlassian.net/browse/TH-13",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
     },
     {
       "key": "TH-11",
@@ -70,7 +88,10 @@
       "start_date": null,
       "due_date": null,
       "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-11"
+      "url": "https://nimaa2.atlassian.net/browse/TH-11",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
     },
     {
       "key": "TH-6",
@@ -80,7 +101,10 @@
       "start_date": "2026-06-15",
       "due_date": "2026-06-23",
       "assignee": "LE4B_20_ハギワラ_ヒビキ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-6"
+      "url": "https://nimaa2.atlassian.net/browse/TH-6",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-5"
     },
     {
       "key": "TH-7",
@@ -90,7 +114,10 @@
       "start_date": "2026-06-18",
       "due_date": "2026-06-24",
       "assignee": "nima",
-      "url": "https://nimaa2.atlassian.net/browse/TH-7"
+      "url": "https://nimaa2.atlassian.net/browse/TH-7",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-5"
     },
     {
       "key": "TH-10",
@@ -100,7 +127,10 @@
       "start_date": null,
       "due_date": null,
       "assignee": null,
-      "url": "https://nimaa2.atlassian.net/browse/TH-10"
+      "url": "https://nimaa2.atlassian.net/browse/TH-10",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-8"
     },
     {
       "key": "TH-9",
@@ -110,7 +140,10 @@
       "start_date": "2026-06-18",
       "due_date": "2026-06-25",
       "assignee": null,
-      "url": "https://nimaa2.atlassian.net/browse/TH-9"
+      "url": "https://nimaa2.atlassian.net/browse/TH-9",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-8"
     },
     {
       "key": "TH-8",
@@ -120,7 +153,10 @@
       "start_date": null,
       "due_date": null,
       "assignee": null,
-      "url": "https://nimaa2.atlassian.net/browse/TH-8"
+      "url": "https://nimaa2.atlassian.net/browse/TH-8",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
     },
     {
       "key": "TH-5",
@@ -130,7 +166,10 @@
       "start_date": null,
       "due_date": null,
       "assignee": null,
-      "url": "https://nimaa2.atlassian.net/browse/TH-5"
+      "url": "https://nimaa2.atlassian.net/browse/TH-5",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
     }
   ]
 }
