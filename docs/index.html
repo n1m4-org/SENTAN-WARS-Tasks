@@ -23,6 +23,7 @@
     --epic-8: #4a7a2b;
     --unclassified: #8b8574;
     --today-line: #1554b3;
+    --label-width: 200px;
     --mono: "SFMono-Regular", "JetBrains Mono", Consolas, Menlo, monospace;
     --sans: -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
   }
@@ -39,7 +40,7 @@
 
   header {
     padding: 3rem 1.5rem 1.5rem;
-    max-width: 960px;
+    max-width: 1400px;
     margin: 0 auto;
     border-bottom: 1px solid var(--rule);
   }
@@ -85,7 +86,7 @@
   }
 
   main {
-    max-width: 960px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 1.5rem;
   }
@@ -158,7 +159,7 @@
   .muted { color: var(--ink-soft); font-family: var(--mono); font-size: 0.8rem; }
 
   footer {
-    max-width: 960px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 2rem 1.5rem 4rem;
     color: var(--ink-soft);
@@ -212,7 +213,7 @@
     position: sticky;
     left: 0;
     z-index: 3;
-    width: 200px;
+    width: var(--label-width);
     flex-shrink: 0;
     background: var(--paper);
   }
@@ -236,14 +237,14 @@
   .tl-groups {
     position: relative;
     margin-top: 0.5rem;
-    width: calc(200px + var(--track-width));
+    width: calc(var(--label-width) + var(--track-width));
   }
 
   .tl-grid-overlay {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 200px;
+    left: var(--label-width);
     width: var(--track-width);
     pointer-events: none;
   }
@@ -309,14 +310,14 @@
 
   .tl-row-epic { font-weight: 600; }
 
-  .tl-row-child .tl-row-label { padding-left: 1.1rem; }
+  .tl-row-child .tl-row-label { padding-left: 2.6rem; }
 
   .tl-row-label {
     position: sticky;
     left: 0;
     z-index: 3;
     background: var(--paper);
-    width: 200px;
+    width: var(--label-width);
     flex-shrink: 0;
     padding-right: 0.6rem;
     overflow: hidden;
@@ -336,6 +337,7 @@
     color: #fff;
     white-space: nowrap;
     flex-shrink: 0;
+    margin-left: auto;
   }
 
   .tl-status-pill.status-new { background: var(--todo); }
@@ -392,7 +394,7 @@
     .tl-row { flex-direction: column; align-items: stretch; gap: 0.25rem; }
     .tl-row-label { position: static; width: auto; white-space: normal; flex-wrap: wrap; background: none; }
     .tl-row-track { width: 100%; height: 0.8rem; }
-    .tl-row-child .tl-row-label { padding-left: 0.8rem; }
+    .tl-row-child .tl-row-label { padding-left: 1.8rem; }
     .tl-epic-title-text { border-bottom-width: 1.5px; }
   }
 
@@ -573,10 +575,20 @@
   }
 
   const TIMELINE_DAY_WIDTH_PX = 28;
+  const TIMELINE_LABEL_WIDTH_RATIO = 0.3;
 
   function computeTrackWidthPx(range) {
     const days = (range.max.getTime() - range.min.getTime()) / 86400000;
     return Math.max(days * TIMELINE_DAY_WIDTH_PX, 1);
+  }
+
+  function computeTimelineContainerWidth() {
+    // #timeline-wrap は初期表示時 hidden（display:none）で clientWidth が 0 になるため、
+    // 常に表示されている main の content-box 幅を代わりに使う。
+    const main = document.querySelector("main");
+    const style = getComputedStyle(main);
+    const paddingX = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
+    return Math.max(main.clientWidth - paddingX, 0);
   }
 
   function toPercent(date, range) {
@@ -720,8 +732,8 @@
       <div class="tl-row tl-row-child">
         <div class="tl-row-label">
           <span class="task-key"><a href="${task.url}" target="_blank" rel="noopener">${task.key}</a></span>
-          <span class="${pillClass}">${escapeHtml(task.status || "")}</span>
           <span class="tl-row-summary">${escapeHtml(task.summary || "—")}</span>
+          <span class="${pillClass}">${escapeHtml(task.status || "")}</span>
         </div>
         <div class="tl-row-track">${barHtml}</div>
       </div>`;
@@ -745,8 +757,8 @@
       <div class="tl-row tl-row-epic" style="--epic-color:${group.color}">
         <div class="tl-row-label">
           <span class="tl-epic-dot" aria-hidden="true"></span>
-          <span class="tl-epic-title"><span class="tl-epic-title-text">${escapeHtml(title)}</span></span>
           ${epic ? `<span class="task-key"><a href="${epic.url}" target="_blank" rel="noopener">${epic.key}</a></span>` : ""}
+          <span class="tl-epic-title"><span class="tl-epic-title-text">${escapeHtml(title)}</span></span>
         </div>
         <div class="tl-row-track">${barHtml}</div>
       </div>`;
@@ -776,7 +788,10 @@
     const monthTicks = buildMonthTicks(range);
     const weekTicks = buildWeekTicks(range);
     const todayPercent = computeTodayPercent(range);
-    const trackWidthPx = computeTrackWidthPx(range);
+
+    const containerWidth = computeTimelineContainerWidth();
+    const labelWidthPx = Math.round(containerWidth * TIMELINE_LABEL_WIDTH_RATIO);
+    const trackWidthPx = Math.max(computeTrackWidthPx(range), containerWidth - labelWidthPx);
 
     const scaleHtml = `
       <div class="tl-scale">
@@ -799,7 +814,7 @@
       </div>`;
 
     wrap.innerHTML = `
-      <div class="tl-container" style="--track-width:${trackWidthPx}px">
+      <div class="tl-container" style="--track-width:${trackWidthPx}px; --label-width:${labelWidthPx}px">
         <div class="tl-scroll">
           ${scaleHtml}
           <div class="tl-groups">
