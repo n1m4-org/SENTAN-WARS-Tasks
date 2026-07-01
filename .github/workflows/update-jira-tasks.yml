@@ -16,6 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Pull rebase
+        run: |
+          git pull --rebase origin main
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -32,10 +36,6 @@ jobs:
           JIRA_JQL: ${{ secrets.JIRA_JQL }}
           JIRA_START_DATE_FIELD: ${{ secrets.JIRA_START_DATE_FIELD }}
         run: python scripts/fetch_jira.py
-
-      - name: Pull rebase
-        run: |
-          git pull --rebase origin main
 
       - name: Commit and push if changed
         run: |
