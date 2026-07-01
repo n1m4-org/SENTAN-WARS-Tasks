@@ -22,7 +22,7 @@ import requests
 JIRA_DOMAIN = os.environ.get("JIRA_DOMAIN", "").strip()
 JIRA_EMAIL = os.environ.get("JIRA_EMAIL", "").strip()
 JIRA_API_TOKEN = os.environ.get("JIRA_API_TOKEN", "").strip()
-JIRA_JQL = os.environ.get("JIRA_JQL", "ORDER BY updated DESC").strip()
+JIRA_JQL = (os.environ.get("JIRA_JQL", "").strip()) or "ORDER BY updated DESC"
 JIRA_START_DATE_FIELD = os.environ.get("JIRA_START_DATE_FIELD", "").strip()
 
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "docs", "data.json")
@@ -37,7 +37,9 @@ def fetch_all_issues() -> list:
     if not JIRA_DOMAIN or not JIRA_EMAIL or not JIRA_API_TOKEN:
         die("JIRA_DOMAIN / JIRA_EMAIL / JIRA_API_TOKEN が設定されていません（GitHub Secrets を確認してください）")
 
-    base_url = f"https://{JIRA_DOMAIN}/rest/api/3/search"
+    # 2025年に Jira Cloud の旧検索API（/rest/api/3/search）が廃止され、
+    # 新しい /rest/api/3/search/jql（nextPageToken方式）に統一されました。
+    base_url = f"https://{JIRA_DOMAIN}/rest/api/3/search/jql"
     fields = ["summary", "status", "assignee", "duedate"]
     if JIRA_START_DATE_FIELD:
         fields.append(JIRA_START_DATE_FIELD)
@@ -46,31 +48,34 @@ def fetch_all_issues() -> list:
     headers = {"Accept": "application/json"}
 
     issues = []
-    start_at = 0
-    max_results = 100
+    next_page_token = None
 
     while True:
         params = {
             "jql": JIRA_JQL,
-            "startAt": start_at,
-            "maxResults": max_results,
+            "maxResults": 100,
             "fields": ",".join(fields),
         }
+        if next_page_token:
+            params["nextPageToken"] = next_page_token
+
         resp = requests.get(base_url, params=params, auth=auth, headers=headers, timeout=30)
 
         if resp.status_code == 401:
             die("認証に失敗しました（401）。JIRA_EMAIL / JIRA_API_TOKEN を確認してください。")
         if resp.status_code == 400:
             die(f"JQL が不正な可能性があります（400）: {resp.text}")
+        if resp.status_code == 410:
+            die("検索APIが410 Goneを返しました。/rest/api/3/search/jql への移行が反映されているか確認してください。")
         resp.raise_for_status()
 
         data = resp.json()
         issues.extend(data.get("issues", []))
 
-        total = data.get("total", 0)
-        start_at += max_results
-        if start_at >= total:
+        # 新APIは isLast / nextPageToken でページ送りを行う（total は返らない）
+        if data.get("isLast", True) or not data.get("nextPageToken"):
             break
+        next_page_token = data["nextPageToken"]
 
     return issues
 
