@@ -1,0 +1,46 @@
+name: Update Jira Task List
+
+on:
+  schedule:
+    # 1時間ごとに実行（UTC基準）。日本時間からの差分に注意。
+    - cron: "0 * * * *"
+  workflow_dispatch: {}   # 手動実行用ボタンを有効化
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch Jira issues
+        env:
+          JIRA_DOMAIN: ${{ secrets.JIRA_DOMAIN }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_JQL: ${{ secrets.JIRA_JQL }}
+          JIRA_START_DATE_FIELD: ${{ secrets.JIRA_START_DATE_FIELD }}
+        run: python scripts/fetch_jira.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data.json
+          if git diff --cached --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "chore: update Jira task data ($(date -u +'%Y-%m-%dT%H:%M:%SZ'))"
+            git push
+          fi
