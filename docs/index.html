@@ -200,11 +200,27 @@
 
   .tl-container { font-family: var(--mono); font-size: 0.78rem; }
 
+  .tl-scroll { overflow-x: auto; overflow-y: hidden; }
+
   .tl-scale {
-    position: relative;
+    display: flex;
     height: 1.6rem;
-    margin-left: 200px;
     border-bottom: 1px solid var(--rule);
+  }
+
+  .tl-scale-spacer {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    width: 200px;
+    flex-shrink: 0;
+    background: var(--paper);
+  }
+
+  .tl-scale-ticks {
+    position: relative;
+    width: var(--track-width);
+    flex-shrink: 0;
   }
 
   .tl-tick {
@@ -217,7 +233,20 @@
     white-space: nowrap;
   }
 
-  .tl-groups { position: relative; margin-top: 0.5rem; }
+  .tl-groups {
+    position: relative;
+    margin-top: 0.5rem;
+    width: calc(200px + var(--track-width));
+  }
+
+  .tl-grid-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 200px;
+    width: var(--track-width);
+    pointer-events: none;
+  }
 
   .tl-week-gridline {
     position: absolute;
@@ -246,19 +275,7 @@
     z-index: 2;
   }
 
-  .tl-group { border-bottom: 1px solid var(--rule); padding: 0.7rem 0; position: relative; z-index: 1; }
-  .tl-group:last-child { border-bottom: none; }
-
-  .tl-group-header {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    padding-left: 200px;
-    padding-bottom: 0.3rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    border-bottom: 2px solid var(--epic-color, var(--rule));
-  }
+  .tl-group { position: relative; z-index: 1; }
 
   .tl-epic-dot {
     width: 9px;
@@ -266,11 +283,39 @@
     border-radius: 2px;
     background: var(--epic-color, var(--ink-soft));
     flex-shrink: 0;
+    margin-left: 0.3rem;
   }
 
-  .tl-row { display: flex; align-items: center; min-height: 1.9rem; }
+  .tl-epic-title {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .tl-epic-title-text {
+    display: inline-block;
+    border-bottom: 2px solid var(--epic-color, var(--rule));
+    padding-bottom: 1px;
+    line-height: 1.3;
+  }
+
+  .tl-row {
+    display: flex;
+    align-items: center;
+    min-height: 1.9rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .tl-row-epic { font-weight: 600; }
+
+  .tl-row-child .tl-row-label { padding-left: 1.1rem; }
 
   .tl-row-label {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: var(--paper);
     width: 200px;
     flex-shrink: 0;
     padding-right: 0.6rem;
@@ -299,12 +344,12 @@
 
   .tl-row-summary { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-  .tl-row-track { position: relative; flex: 1; height: 1rem; }
+  .tl-row-track { position: relative; flex: none; width: var(--track-width); height: 1rem; }
 
   .tl-bar {
     position: absolute;
-    top: 0;
-    height: 100%;
+    height: 0.85rem;
+    top: 0.075rem;
     border-radius: 2px;
     min-width: 3px;
   }
@@ -315,23 +360,13 @@
     border: 1px dashed var(--ink-soft);
   }
 
-  .tl-bar.epic { height: 6px; top: 5px; opacity: 0.85; }
-
-  .tl-undated {
-    padding-left: 200px;
-    color: var(--ink-soft);
-    font-size: 0.76rem;
-    margin-top: 0.3rem;
+  .tl-bar.epic {
+    height: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.9;
+    border-radius: 3px;
   }
-
-  .tl-undated .tl-undated-label {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 0.68rem;
-  }
-
-  .tl-undated ul { margin: 0.3rem 0 0; padding-left: 1.1rem; }
-  .tl-undated li { padding: 0.15rem 0; }
 
   @media (max-width: 640px) {
     thead { display: none; }
@@ -349,10 +384,16 @@
       letter-spacing: 0.05em;
     }
 
-    .tl-scale, .tl-group-header, .tl-undated { margin-left: 0; padding-left: 0; }
+    .tl-container { --track-width: 100%; }
+    .tl-scroll { overflow: visible; }
+    .tl-scale-spacer { display: none; }
+    .tl-scale-ticks, .tl-groups, .tl-grid-overlay { width: 100%; }
+    .tl-grid-overlay { left: 0; }
     .tl-row { flex-direction: column; align-items: stretch; gap: 0.25rem; }
-    .tl-row-label { width: auto; white-space: normal; flex-wrap: wrap; }
-    .tl-row-track { height: 0.8rem; }
+    .tl-row-label { position: static; width: auto; white-space: normal; flex-wrap: wrap; background: none; }
+    .tl-row-track { width: 100%; height: 0.8rem; }
+    .tl-row-child .tl-row-label { padding-left: 0.8rem; }
+    .tl-epic-title-text { border-bottom-width: 1.5px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -506,18 +547,36 @@
     return r;
   }
 
-  function computeDateRange(tasks) {
-    const dates = [];
-    for (const t of tasks) {
-      if (t.start_date) dates.push(new Date(t.start_date));
-      if (t.due_date) dates.push(new Date(t.due_date));
-    }
-    if (!dates.length) return null;
+  const TIMELINE_TAIL_BUFFER_DAYS = 5;
+  const TIMELINE_FALLBACK_SPAN_DAYS = 30;
 
-    let min = startOfMonth(new Date(Math.min(...dates)));
-    let max = endOfMonth(new Date(Math.max(...dates)));
-    if (min.getTime() === max.getTime()) max = endOfMonth(addMonths(min, 1));
+  function computeDateRange(tasks) {
+    const starts = tasks.filter(t => t.start_date).map(t => new Date(t.start_date));
+    const dues = tasks.filter(t => t.due_date).map(t => new Date(t.due_date));
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    let min = starts.length ? new Date(Math.min(...starts))
+      : dues.length ? new Date(Math.min(...dues)) : today;
+    min.setHours(0, 0, 0, 0);
+
+    const latestDue = dues.length ? new Date(Math.max(...dues)) : null;
+    const latestStart = starts.length ? new Date(Math.max(...starts)) : null;
+    let candidateMax = latestDue || latestStart || today;
+    candidateMax.setHours(0, 0, 0, 0);
+    let max = addDays(candidateMax > today ? candidateMax : today, TIMELINE_TAIL_BUFFER_DAYS);
+
+    if (!starts.length && !dues.length) max = addDays(today, TIMELINE_FALLBACK_SPAN_DAYS);
+    if (min.getTime() >= max.getTime()) max = addDays(min, TIMELINE_TAIL_BUFFER_DAYS);
+
     return { min, max };
+  }
+
+  const TIMELINE_DAY_WIDTH_PX = 28;
+
+  function computeTrackWidthPx(range) {
+    const days = (range.max.getTime() - range.min.getTime()) / 86400000;
+    return Math.max(days * TIMELINE_DAY_WIDTH_PX, 1);
   }
 
   function toPercent(date, range) {
@@ -649,66 +708,59 @@
 
   function timelineBarHtml(task, range, epicColor) {
     const geo = computeBarGeometry(task, range);
-    if (geo.kind === "none") return null;
-    const cls = ["tl-bar"];
-    if (geo.kind !== "full") cls.push("tentative");
     const pillClass = `tl-status-pill status-${task.status_category || "new"}`;
+    let barHtml = "";
+    if (geo.kind !== "none") {
+      const cls = ["tl-bar"];
+      if (geo.kind !== "full") cls.push("tentative");
+      barHtml = `<div class="${cls.join(' ')}" style="left:${geo.left}%; width:${geo.width}%; background-color:${epicColor};"
+           title="${escapeHtml(task.status || '')} ${fmtDate(task.start_date)} 〜 ${fmtDate(task.due_date)}"></div>`;
+    }
     return `
-      <div class="tl-row">
+      <div class="tl-row tl-row-child">
         <div class="tl-row-label">
           <span class="task-key"><a href="${task.url}" target="_blank" rel="noopener">${task.key}</a></span>
           <span class="${pillClass}">${escapeHtml(task.status || "")}</span>
           <span class="tl-row-summary">${escapeHtml(task.summary || "—")}</span>
         </div>
-        <div class="tl-row-track">
-          <div class="${cls.join(' ')}" style="left:${geo.left}%; width:${geo.width}%; background-color:${epicColor};"
-               title="${escapeHtml(task.status || '')} ${fmtDate(task.start_date)} 〜 ${fmtDate(task.due_date)}"></div>
-        </div>
+        <div class="tl-row-track">${barHtml}</div>
       </div>`;
   }
 
-  function renderTimelineGroup(group, range) {
-    const title = group.epic ? (group.epic.summary || group.epic.key) : "未分類";
-    const rows = group.items.map(t => timelineBarHtml(t, range, group.color)).filter(Boolean).join("");
-    const undated = group.items.filter(t => !t.start_date && !t.due_date);
-
-    let epicBarHtml = "";
-    if (group.epic) {
+  function timelineEpicRowHtml(group, range) {
+    const epic = group.epic;
+    const title = epic ? (epic.summary || epic.key) : "未分類";
+    let barHtml = "";
+    if (epic) {
       const geo = computeEpicRollupGeometry(group, range);
       if (geo.kind !== "none") {
         const cls = ["tl-bar", "epic"];
         if (geo.kind === "tentative-due" || geo.kind === "tentative-start") cls.push("tentative");
         const rollupNote = geo.kind === "rollup" ? "（子タスクの日程から算出）" : "";
-        epicBarHtml = `
-          <div class="tl-row">
-            <div class="tl-row-label"></div>
-            <div class="tl-row-track">
-              <div class="${cls.join(' ')}" style="left:${geo.left}%; width:${geo.width}%; background-color:${group.color};"
-                   title="${fmtDate(geo.start)} 〜 ${fmtDate(geo.due)}${rollupNote}"></div>
-            </div>
-          </div>`;
+        barHtml = `<div class="${cls.join(' ')}" style="left:${geo.left}%; width:${geo.width}%; background-color:${group.color};"
+             title="${fmtDate(geo.start)} 〜 ${fmtDate(geo.due)}${rollupNote}"></div>`;
       }
     }
+    return `
+      <div class="tl-row tl-row-epic" style="--epic-color:${group.color}">
+        <div class="tl-row-label">
+          <span class="tl-epic-dot" aria-hidden="true"></span>
+          <span class="tl-epic-title"><span class="tl-epic-title-text">${escapeHtml(title)}</span></span>
+          ${epic ? `<span class="task-key"><a href="${epic.url}" target="_blank" rel="noopener">${epic.key}</a></span>` : ""}
+        </div>
+        <div class="tl-row-track">${barHtml}</div>
+      </div>`;
+  }
 
-    const undatedHtml = undated.length ? `
-      <div class="tl-undated">
-        <div class="tl-undated-label">日付未設定</div>
-        <ul>
-          ${undated.map(t => `<li><span class="task-key"><a href="${t.url}" target="_blank" rel="noopener">${t.key}</a></span> ${escapeHtml(t.summary || "—")}</li>`).join("")}
-        </ul>
-      </div>` : "";
+  function renderTimelineGroup(group, range) {
+    const epicRowHtml = timelineEpicRowHtml(group, range);
+    const rows = group.items.map(t => timelineBarHtml(t, range, group.color)).join("");
 
     return `
-      <section class="tl-group">
-        <header class="tl-group-header" style="--epic-color:${group.color}">
-          <span class="tl-epic-dot" aria-hidden="true"></span>
-          <span>${escapeHtml(title)}</span>
-          ${group.epic ? `<span class="task-key"><a href="${group.epic.url}" target="_blank" rel="noopener">${group.epic.key}</a></span>` : ""}
-        </header>
-        ${epicBarHtml}
+      <div class="tl-group">
+        ${epicRowHtml}
         ${rows}
-        ${undatedHtml}
-      </section>`;
+      </div>`;
   }
 
   function renderTimeline(data) {
@@ -724,10 +776,14 @@
     const monthTicks = buildMonthTicks(range);
     const weekTicks = buildWeekTicks(range);
     const todayPercent = computeTodayPercent(range);
+    const trackWidthPx = computeTrackWidthPx(range);
 
     const scaleHtml = `
       <div class="tl-scale">
-        ${monthTicks.map(tk => `<div class="tl-tick" style="left:${tk.percent}%"><span>${tk.date.getFullYear()}-${String(tk.date.getMonth() + 1).padStart(2, '0')}</span></div>`).join("")}
+        <div class="tl-scale-spacer"></div>
+        <div class="tl-scale-ticks">
+          ${monthTicks.map(tk => `<div class="tl-tick" style="left:${tk.percent}%"><span>${tk.date.getFullYear()}-${String(tk.date.getMonth() + 1).padStart(2, '0')}</span></div>`).join("")}
+        </div>
       </div>`;
 
     const weekGridHtml = weekTicks.map(tk => `<div class="tl-week-gridline" style="left:${tk.percent}%"></div>`).join("");
@@ -735,15 +791,21 @@
     const todayLineHtml = todayPercent !== null
       ? `<div class="tl-today-line" style="left:${todayPercent}%" title="本日"></div>`
       : "";
+    const gridOverlayHtml = `
+      <div class="tl-grid-overlay">
+        ${weekGridHtml}
+        ${monthGridHtml}
+        ${todayLineHtml}
+      </div>`;
 
     wrap.innerHTML = `
-      <div class="tl-container">
-        ${scaleHtml}
-        <div class="tl-groups">
-          ${weekGridHtml}
-          ${monthGridHtml}
-          ${todayLineHtml}
-          ${groups.map(g => renderTimelineGroup(g, range)).join("")}
+      <div class="tl-container" style="--track-width:${trackWidthPx}px">
+        <div class="tl-scroll">
+          ${scaleHtml}
+          <div class="tl-groups">
+            ${gridOverlayHtml}
+            ${groups.map(g => renderTimelineGroup(g, range)).join("")}
+          </div>
         </div>
       </div>`;
   }
