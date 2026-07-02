@@ -3,7 +3,7 @@ name: Update Jira Task List
 on:
   schedule:
     # 1時間ごとに実行（UTC基準）。日本時間からの差分に注意。
-    - cron: "0 * * * *"
+    - cron: "55 * * * *"
   workflow_dispatch: {}   # 手動実行用ボタンを有効化
 
 permissions:
