@@ -1,7 +1,33 @@
 {
-  "generated_at": "2026-07-03T07:55:25.517296+00:00",
-  "count": 22,
+  "generated_at": "2026-07-03T11:26:32.550443+00:00",
+  "count": 24,
   "tasks": [
+    {
+      "key": "TH-28",
+      "summary": "ボス着地パーティクル",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-03",
+      "due_date": "2026-07-03",
+      "assignee": "LE4B_20_ハギワラ_ヒビキ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-28",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-21"
+    },
+    {
+      "key": "TH-27",
+      "summary": "ダッシュパーティクル",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-03",
+      "due_date": "2026-07-03",
+      "assignee": "LE4B_20_ハギワラ_ヒビキ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-27",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-21"
+    },
     {
       "key": "TH-18",
       "summary": "ウェーブ進行クラスを作る",
@@ -9,7 +35,7 @@
       "status_category": "done",
       "start_date": "2026-07-02",
       "due_date": "2026-07-03",
-      "assignee": "nima",
+      "assignee": "LE4B_20_ハギワラ_ヒビキ",
       "url": "https://nimaa2.atlassian.net/browse/TH-18",
       "issue_type_name": "タスク",
       "is_epic": false,
