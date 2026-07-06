@@ -1,7 +1,85 @@
 {
-  "generated_at": "2026-07-06T02:12:30.286554+00:00",
-  "count": 33,
+  "generated_at": "2026-07-06T05:59:05.175637+00:00",
+  "count": 40,
   "tasks": [
+    {
+      "key": "TH-19",
+      "summary": "描画",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": null,
+      "due_date": "2026-07-06",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-19",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-11"
+    },
+    {
+      "key": "TH-44",
+      "summary": "エネミーの攻撃実装",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": "2026-07-06",
+      "due_date": null,
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-44",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
+    },
+    {
+      "key": "TH-26",
+      "summary": "エネミーの移動実装",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-03",
+      "due_date": "2026-07-06",
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-26",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
+    },
+    {
+      "key": "TH-41",
+      "summary": "フェーズ進行クラスを作成する",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": "2026-07-06",
+      "due_date": null,
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-41",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-14"
+    },
+    {
+      "key": "TH-43",
+      "summary": "ベース：属性の設定を可能にする",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-43",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-42",
+      "summary": "SENTANを装備できるようにする",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-42",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-11"
+    },
     {
       "key": "TH-37",
       "summary": "ボスHPを表示する",
@@ -9,11 +87,63 @@
       "status_category": "new",
       "start_date": null,
       "due_date": null,
-      "assignee": null,
+      "assignee": "nima",
       "url": "https://nimaa2.atlassian.net/browse/TH-37",
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-33"
+    },
+    {
+      "key": "TH-33",
+      "summary": "ボスフェーズ",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-33",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
+    },
+    {
+      "key": "TH-40",
+      "summary": "ベース：攻撃時コールバックを可能にする",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-40",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-39",
+      "summary": "ベース：装備時コールバックを可能にする",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-39",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-38",
+      "summary": "SENTAN",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-38",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
     },
     {
       "key": "TH-34",
@@ -53,19 +183,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-30"
-    },
-    {
-      "key": "TH-33",
-      "summary": "ボスフェーズ",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": null,
-      "url": "https://nimaa2.atlassian.net/browse/TH-33",
-      "issue_type_name": "エピック",
-      "is_epic": true,
-      "parent_key": null
     },
     {
       "key": "TH-32",
@@ -224,19 +341,6 @@
       "parent_key": null
     },
     {
-      "key": "TH-26",
-      "summary": "エネミーの移動実装",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-03",
-      "due_date": null,
-      "assignee": "ヤマグチ_タクト",
-      "url": "https://nimaa2.atlassian.net/browse/TH-26",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-13"
-    },
-    {
       "key": "TH-24",
       "summary": "Inputクラス経由でGamePadを取得できるようにする",
       "status": "完了",
@@ -313,19 +417,6 @@
       "issue_type_name": "エピック",
       "is_epic": true,
       "parent_key": null
-    },
-    {
-      "key": "TH-19",
-      "summary": "描画",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-19",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-11"
     },
     {
       "key": "TH-17",
