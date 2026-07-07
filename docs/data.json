@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-07T17:06:32.881675+00:00",
+  "generated_at": "2026-07-07T19:42:02.731693+00:00",
   "count": 40,
   "tasks": [
+    {
+      "key": "TH-41",
+      "summary": "フェーズ進行クラスを作成する",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-06",
+      "due_date": "2026-07-07",
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-41",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-14"
+    },
     {
       "key": "TH-19",
       "summary": "描画",
@@ -40,19 +53,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-13"
-    },
-    {
-      "key": "TH-41",
-      "summary": "フェーズ進行クラスを作成する",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-06",
-      "due_date": null,
-      "assignee": "nima",
-      "url": "https://nimaa2.atlassian.net/browse/TH-41",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-14"
     },
     {
       "key": "TH-43",
