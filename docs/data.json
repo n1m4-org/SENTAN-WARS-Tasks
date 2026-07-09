@@ -1,7 +1,33 @@
 {
-  "generated_at": "2026-07-09T11:45:44.653132+00:00",
-  "count": 41,
+  "generated_at": "2026-07-09T14:33:37.672340+00:00",
+  "count": 43,
   "tasks": [
+    {
+      "key": "TH-47",
+      "summary": "クラスを作成する",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-47",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-46"
+    },
+    {
+      "key": "TH-46",
+      "summary": "タイトルシーン",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-46",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
+    },
     {
       "key": "TH-45",
       "summary": "画像：敵アイコン",
