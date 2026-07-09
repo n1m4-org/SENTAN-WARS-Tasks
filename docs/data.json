@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-09T04:41:55.094554+00:00",
-  "count": 40,
+  "generated_at": "2026-07-09T08:19:09.125396+00:00",
+  "count": 41,
   "tasks": [
+    {
+      "key": "TH-45",
+      "summary": "画像：敵アイコン",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-45",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-25"
+    },
     {
       "key": "TH-41",
       "summary": "フェーズ進行クラスを作成する",
