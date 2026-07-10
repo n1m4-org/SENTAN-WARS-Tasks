@@ -1,19 +1,45 @@
 {
-  "generated_at": "2026-07-09T23:02:49.529296+00:00",
-  "count": 43,
+  "generated_at": "2026-07-10T01:59:33.420656+00:00",
+  "count": 45,
   "tasks": [
     {
       "key": "TH-47",
       "summary": "クラスを作成する",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-09",
+      "due_date": "2026-07-10",
       "assignee": null,
       "url": "https://nimaa2.atlassian.net/browse/TH-47",
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-46"
+    },
+    {
+      "key": "TH-49",
+      "summary": "ロゴとゲーム開始案内テキストの表示",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-49",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-46"
+    },
+    {
+      "key": "TH-48",
+      "summary": "画像：タイトルロゴ",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": "2026-07-09",
+      "due_date": "2026-07-09",
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-48",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-25"
     },
     {
       "key": "TH-46",
