@@ -1,7 +1,46 @@
 {
-  "generated_at": "2026-07-13T05:34:13.523101+00:00",
-  "count": 46,
+  "generated_at": "2026-07-13T08:50:01.138282+00:00",
+  "count": 47,
   "tasks": [
+    {
+      "key": "TH-51",
+      "summary": "判定・押し戻し処理の実装",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": "2026-07-13",
+      "due_date": null,
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-51",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
+    },
+    {
+      "key": "TH-11",
+      "summary": "プレイヤー",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-11",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
+    },
+    {
+      "key": "TH-44",
+      "summary": "エネミーの攻撃実装",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-06",
+      "due_date": "2026-07-13",
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-44",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
+    },
     {
       "key": "TH-38",
       "summary": "SENTAN",
@@ -107,19 +146,6 @@
       "parent_key": "TH-25"
     },
     {
-      "key": "TH-11",
-      "summary": "プレイヤー",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-10",
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-11",
-      "issue_type_name": "エピック",
-      "is_epic": true,
-      "parent_key": null
-    },
-    {
       "key": "TH-45",
       "summary": "画像：敵アイコン",
       "status": "To Do",
@@ -157,19 +183,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-11"
-    },
-    {
-      "key": "TH-44",
-      "summary": "エネミーの攻撃実装",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-06",
-      "due_date": null,
-      "assignee": "ヤマグチ_タクト",
-      "url": "https://nimaa2.atlassian.net/browse/TH-44",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-13"
     },
     {
       "key": "TH-26",
