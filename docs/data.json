@@ -1,7 +1,33 @@
 {
-  "generated_at": "2026-07-14T15:16:56.086167+00:00",
-  "count": 47,
+  "generated_at": "2026-07-14T17:03:43.752289+00:00",
+  "count": 49,
   "tasks": [
+    {
+      "key": "TH-53",
+      "summary": "FlexBox風のレイアウト調整ツールを作成する",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-53",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-52"
+    },
+    {
+      "key": "TH-52",
+      "summary": "ツール",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-52",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
+    },
     {
       "key": "TH-51",
       "summary": "判定・押し戻し処理の実装",
