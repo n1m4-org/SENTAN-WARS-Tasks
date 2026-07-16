@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-16T07:16:21.915860+00:00",
-  "count": 49,
+  "generated_at": "2026-07-16T09:58:06.714205+00:00",
+  "count": 51,
   "tasks": [
     {
       "key": "TH-53",
       "summary": "FlexBox風のレイアウト調整ツールを作成する",
-      "status": "進行中",
+      "status": "PR",
       "status_category": "indeterminate",
       "start_date": "2026-07-16",
       "due_date": null,
@@ -14,6 +14,45 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-52"
+    },
+    {
+      "key": "TH-54",
+      "summary": "敵生成クラス作成",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": "2026-07-16",
+      "due_date": null,
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-54",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
+    },
+    {
+      "key": "TH-55",
+      "summary": "ボス1を作成",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-55",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
+    },
+    {
+      "key": "TH-51",
+      "summary": "判定・押し戻し処理の実装",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-13",
+      "due_date": "2026-07-16",
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-51",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
     },
     {
       "key": "TH-49",
@@ -40,19 +79,6 @@
       "issue_type_name": "エピック",
       "is_epic": true,
       "parent_key": null
-    },
-    {
-      "key": "TH-51",
-      "summary": "判定・押し戻し処理の実装",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-13",
-      "due_date": null,
-      "assignee": "ヤマグチ_タクト",
-      "url": "https://nimaa2.atlassian.net/browse/TH-51",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-13"
     },
     {
       "key": "TH-11",
