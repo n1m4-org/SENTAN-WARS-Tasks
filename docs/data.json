@@ -1,7 +1,72 @@
 {
-  "generated_at": "2026-07-16T17:58:48.412488+00:00",
-  "count": 51,
+  "generated_at": "2026-07-16T19:56:44.423269+00:00",
+  "count": 55,
   "tasks": [
+    {
+      "key": "TH-59",
+      "summary": "プレイヤーのHPを表示する",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-59",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-56"
+    },
+    {
+      "key": "TH-60",
+      "summary": "画像 : HPバー",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-16",
+      "due_date": "2026-07-16",
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-60",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-25"
+    },
+    {
+      "key": "TH-25",
+      "summary": "リソース",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-25",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
+    },
+    {
+      "key": "TH-57",
+      "summary": "現在のウェーブ数を画面上部に表示する",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-57",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-56"
+    },
+    {
+      "key": "TH-56",
+      "summary": "ゲームシーン",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": null,
+      "url": "https://nimaa2.atlassian.net/browse/TH-56",
+      "issue_type_name": "エピック",
+      "is_epic": true,
+      "parent_key": null
+    },
     {
       "key": "TH-53",
       "summary": "FlexBox風のレイアウト調整ツールを作成する",
@@ -430,19 +495,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-14"
-    },
-    {
-      "key": "TH-25",
-      "summary": "リソース",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": null,
-      "url": "https://nimaa2.atlassian.net/browse/TH-25",
-      "issue_type_name": "エピック",
-      "is_epic": true,
-      "parent_key": null
     },
     {
       "key": "TH-28",
