@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-17T05:33:03.654609+00:00",
+  "generated_at": "2026-07-17T07:52:41.018901+00:00",
   "count": 55,
   "tasks": [
     {
       "key": "TH-59",
       "summary": "プレイヤーのHPを表示する",
-      "status": "進行中",
-      "status_category": "indeterminate",
+      "status": "完了",
+      "status_category": "done",
       "start_date": "2026-07-16",
-      "due_date": null,
+      "due_date": "2026-07-17",
       "assignee": "nima",
       "url": "https://nimaa2.atlassian.net/browse/TH-59",
       "issue_type_name": "タスク",
