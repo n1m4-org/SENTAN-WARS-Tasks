@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-18T08:48:23.723416+00:00",
+  "generated_at": "2026-07-18T10:10:03.478999+00:00",
   "count": 55,
   "tasks": [
+    {
+      "key": "TH-57",
+      "summary": "現在のウェーブ数を画面上部に表示する",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": "2026-07-18",
+      "due_date": null,
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-57",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-56"
+    },
     {
       "key": "TH-59",
       "summary": "プレイヤーのHPを表示する",
@@ -40,19 +53,6 @@
       "issue_type_name": "エピック",
       "is_epic": true,
       "parent_key": null
-    },
-    {
-      "key": "TH-57",
-      "summary": "現在のウェーブ数を画面上部に表示する",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "nima",
-      "url": "https://nimaa2.atlassian.net/browse/TH-57",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-56"
     },
     {
       "key": "TH-56",
