@@ -1,7 +1,33 @@
 {
-  "generated_at": "2026-07-20T02:03:52.339456+00:00",
+  "generated_at": "2026-07-20T06:00:03.352679+00:00",
   "count": 55,
   "tasks": [
+    {
+      "key": "TH-55",
+      "summary": "ボス1を作成",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": "2026-07-20",
+      "due_date": null,
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-55",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
+    },
+    {
+      "key": "TH-54",
+      "summary": "敵生成クラス作成",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-16",
+      "due_date": "2026-07-20",
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-54",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
+    },
     {
       "key": "TH-57",
       "summary": "現在のウェーブ数を画面上部に表示する",
@@ -79,32 +105,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-52"
-    },
-    {
-      "key": "TH-54",
-      "summary": "敵生成クラス作成",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-16",
-      "due_date": null,
-      "assignee": "ヤマグチ_タクト",
-      "url": "https://nimaa2.atlassian.net/browse/TH-54",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-13"
-    },
-    {
-      "key": "TH-55",
-      "summary": "ボス1を作成",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "ヤマグチ_タクト",
-      "url": "https://nimaa2.atlassian.net/browse/TH-55",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-13"
     },
     {
       "key": "TH-51",
