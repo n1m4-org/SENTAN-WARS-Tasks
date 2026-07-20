@@ -1,7 +1,33 @@
 {
-  "generated_at": "2026-07-20T17:23:44.892990+00:00",
-  "count": 57,
+  "generated_at": "2026-07-20T19:25:51.574682+00:00",
+  "count": 58,
   "tasks": [
+    {
+      "key": "TH-64",
+      "summary": "目盛り(メジャー)を表示する",
+      "status": "PR",
+      "status_category": "indeterminate",
+      "start_date": "2026-07-20",
+      "due_date": null,
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-64",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-16"
+    },
+    {
+      "key": "TH-57",
+      "summary": "現在のウェーブ数を画面上部に表示する",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-18",
+      "due_date": "2026-07-20",
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-57",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-56"
+    },
     {
       "key": "TH-63",
       "summary": "突進",
@@ -66,19 +92,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-13"
-    },
-    {
-      "key": "TH-57",
-      "summary": "現在のウェーブ数を画面上部に表示する",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-18",
-      "due_date": null,
-      "assignee": "nima",
-      "url": "https://nimaa2.atlassian.net/browse/TH-57",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-56"
     },
     {
       "key": "TH-59",
