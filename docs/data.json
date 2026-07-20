@@ -1,7 +1,46 @@
 {
-  "generated_at": "2026-07-20T06:00:03.352679+00:00",
-  "count": 55,
+  "generated_at": "2026-07-20T09:50:05.781635+00:00",
+  "count": 57,
   "tasks": [
+    {
+      "key": "TH-63",
+      "summary": "突進",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-63",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-62",
+      "summary": "二段ジャンプ",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-20",
+      "due_date": "2026-07-20",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-62",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-50",
+      "summary": "ジャンプ",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-10",
+      "due_date": "2026-07-20",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-50",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-11"
+    },
     {
       "key": "TH-55",
       "summary": "ボス1を作成",
@@ -183,19 +222,6 @@
       "issue_type_name": "エピック",
       "is_epic": true,
       "parent_key": null
-    },
-    {
-      "key": "TH-50",
-      "summary": "ジャンプ",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": "2026-07-10",
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-50",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-11"
     },
     {
       "key": "TH-43",
