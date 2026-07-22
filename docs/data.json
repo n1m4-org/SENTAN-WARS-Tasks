@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-22T08:08:59.288513+00:00",
+  "generated_at": "2026-07-22T10:58:33.453645+00:00",
   "count": 61,
   "tasks": [
+    {
+      "key": "TH-66",
+      "summary": "モデル : フィールド",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-22",
+      "due_date": "2026-07-22",
+      "assignee": "LE4B_20_ハギワラ_ヒビキ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-66",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-25"
+    },
     {
       "key": "TH-67",
       "summary": "ワープホールを作成する",
@@ -27,19 +40,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-14"
-    },
-    {
-      "key": "TH-66",
-      "summary": "モデル : フィールド",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "LE4B_20_ハギワラ_ヒビキ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-66",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-25"
     },
     {
       "key": "TH-64",
