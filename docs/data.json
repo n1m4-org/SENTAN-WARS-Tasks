@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-21T23:48:15.956232+00:00",
+  "generated_at": "2026-07-22T01:46:41.142674+00:00",
   "count": 58,
   "tasks": [
     {
       "key": "TH-64",
       "summary": "目盛り(メジャー)を表示する",
-      "status": "PR",
-      "status_category": "indeterminate",
+      "status": "完了",
+      "status_category": "done",
       "start_date": "2026-07-20",
-      "due_date": null,
+      "due_date": "2026-07-22",
       "assignee": "nima",
       "url": "https://nimaa2.atlassian.net/browse/TH-64",
       "issue_type_name": "タスク",
