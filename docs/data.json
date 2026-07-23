@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-23T20:51:56.328429+00:00",
+  "generated_at": "2026-07-23T22:01:05.639593+00:00",
   "count": 85,
   "tasks": [
+    {
+      "key": "TH-91",
+      "summary": "攻撃ヒット時のparticle",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-23",
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-91",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-11"
+    },
     {
       "key": "TH-90",
       "summary": "healthのgetter",
@@ -11,19 +24,6 @@
       "due_date": "2026-07-23",
       "assignee": "LE4B_17_ツユキ_イオリ",
       "url": "https://nimaa2.atlassian.net/browse/TH-90",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-11"
-    },
-    {
-      "key": "TH-91",
-      "summary": "攻撃ヒット時のparticle",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-91",
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-11"
