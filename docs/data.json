@@ -1,12 +1,51 @@
 {
-  "generated_at": "2026-07-23T17:10:04.909585+00:00",
-  "count": 75,
+  "generated_at": "2026-07-23T18:59:37.469235+00:00",
+  "count": 76,
   "tasks": [
+    {
+      "key": "TH-82",
+      "summary": "ヒットエフェクト",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-24",
+      "due_date": "2026-07-24",
+      "assignee": "LE4B_20_ハギワラ_ヒビキ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-82",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-21"
+    },
+    {
+      "key": "TH-81",
+      "summary": "回転斬り",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-23",
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-81",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-77",
+      "summary": "ガウシアンブラーをかけてステージをぼかす",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-23",
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_20_ハギワラ_ヒビキ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-77",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-73"
+    },
     {
       "key": "TH-75",
       "summary": "ランキング形式で表示する",
-      "status": "PR",
-      "status_category": "indeterminate",
+      "status": "完了",
+      "status_category": "done",
       "start_date": "2026-07-23",
       "due_date": "2026-07-23",
       "assignee": "LE4B_20_ハギワラ_ヒビキ",
@@ -37,19 +76,6 @@
       "due_date": "2026-07-23",
       "assignee": "LE4B_17_ツユキ_イオリ",
       "url": "https://nimaa2.atlassian.net/browse/TH-79",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-38"
-    },
-    {
-      "key": "TH-81",
-      "summary": "回転斬り",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-81",
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-38"
@@ -131,19 +157,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-38"
-    },
-    {
-      "key": "TH-77",
-      "summary": "ガウシアンブラーをかけてステージをぼかす",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": "2026-07-23",
-      "due_date": "2026-07-23",
-      "assignee": "LE4B_20_ハギワラ_ヒビキ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-77",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-73"
     },
     {
       "key": "TH-73",
