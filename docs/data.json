@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-23T10:11:58.068349+00:00",
+  "generated_at": "2026-07-23T12:19:05.762186+00:00",
   "count": 63,
   "tasks": [
+    {
+      "key": "TH-65",
+      "summary": "ウェーブの切り替えをゲームの進行に適用する",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-22",
+      "due_date": "2026-07-23",
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-65",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-14"
+    },
     {
       "key": "TH-67",
       "summary": "ワープホールを作成する",
@@ -92,19 +105,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-25"
-    },
-    {
-      "key": "TH-65",
-      "summary": "ウェーブの切り替えをゲームの進行に適用する",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-22",
-      "due_date": null,
-      "assignee": "nima",
-      "url": "https://nimaa2.atlassian.net/browse/TH-65",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-14"
     },
     {
       "key": "TH-64",
