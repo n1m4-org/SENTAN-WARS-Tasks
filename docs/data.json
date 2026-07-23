@@ -1,7 +1,59 @@
 {
-  "generated_at": "2026-07-23T04:09:26.784278+00:00",
-  "count": 62,
+  "generated_at": "2026-07-23T07:27:18.267006+00:00",
+  "count": 63,
   "tasks": [
+    {
+      "key": "TH-69",
+      "summary": "被弾処理",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-23",
+      "due_date": "2026-07-23",
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-69",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
+    },
+    {
+      "key": "TH-63",
+      "summary": "突進",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-23",
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-63",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-39",
+      "summary": "ベース：装備時コールバックを可能にする",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": null,
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-39",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-67",
+      "summary": "ワープホールを作成する",
+      "status": "進行中",
+      "status_category": "indeterminate",
+      "start_date": "2026-07-22",
+      "due_date": null,
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-67",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-29"
+    },
     {
       "key": "TH-68",
       "summary": "プレイヤーにコライダーを適用する",
@@ -42,19 +94,6 @@
       "parent_key": "TH-25"
     },
     {
-      "key": "TH-67",
-      "summary": "ワープホールを作成する",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-22",
-      "due_date": null,
-      "assignee": "nima",
-      "url": "https://nimaa2.atlassian.net/browse/TH-67",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-14"
-    },
-    {
       "key": "TH-65",
       "summary": "ウェーブの切り替えをゲームの進行に適用する",
       "status": "進行中",
@@ -92,19 +131,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-56"
-    },
-    {
-      "key": "TH-63",
-      "summary": "突進",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-63",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-38"
     },
     {
       "key": "TH-62",
@@ -440,19 +466,6 @@
       "due_date": null,
       "assignee": "LE4B_17_ツユキ_イオリ",
       "url": "https://nimaa2.atlassian.net/browse/TH-40",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-38"
-    },
-    {
-      "key": "TH-39",
-      "summary": "ベース：装備時コールバックを可能にする",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-39",
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-38"
