@@ -1,7 +1,111 @@
 {
-  "generated_at": "2026-07-23T15:02:35.611033+00:00",
-  "count": 72,
+  "generated_at": "2026-07-23T17:10:04.909585+00:00",
+  "count": 75,
   "tasks": [
+    {
+      "key": "TH-75",
+      "summary": "ランキング形式で表示する",
+      "status": "PR",
+      "status_category": "indeterminate",
+      "start_date": "2026-07-23",
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_20_ハギワラ_ヒビキ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-75",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-73"
+    },
+    {
+      "key": "TH-80",
+      "summary": "斬撃",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": null,
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-80",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-79",
+      "summary": "三段コンボ",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": null,
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-79",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-81",
+      "summary": "回転斬り",
+      "status": "To Do",
+      "status_category": "new",
+      "start_date": null,
+      "due_date": null,
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-81",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-76",
+      "summary": "HP",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": null,
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-76",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-11"
+    },
+    {
+      "key": "TH-71",
+      "summary": "各SENTANの攻撃ダメージ設定、反映",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": null,
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-71",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-40",
+      "summary": "ベース：攻撃時コールバックを可能にする",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": null,
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-40",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-38"
+    },
+    {
+      "key": "TH-78",
+      "summary": "向いている方向にカメラを向かせる",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-23",
+      "due_date": "2026-07-23",
+      "assignee": "LE4B_17_ツユキ_イオリ",
+      "url": "https://nimaa2.atlassian.net/browse/TH-78",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-11"
+    },
     {
       "key": "TH-74",
       "summary": "クリアタイムの表示",
@@ -14,19 +118,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-73"
-    },
-    {
-      "key": "TH-78",
-      "summary": "向いている方向にカメラを向かせる",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-23",
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-78",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-11"
     },
     {
       "key": "TH-70",
@@ -50,32 +141,6 @@
       "due_date": "2026-07-23",
       "assignee": "LE4B_20_ハギワラ_ヒビキ",
       "url": "https://nimaa2.atlassian.net/browse/TH-77",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-73"
-    },
-    {
-      "key": "TH-76",
-      "summary": "HP",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-76",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-11"
-    },
-    {
-      "key": "TH-75",
-      "summary": "ランキング形式で表示する",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": "2026-07-23",
-      "due_date": "2026-07-23",
-      "assignee": "LE4B_20_ハギワラ_ヒビキ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-75",
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-73"
@@ -118,19 +183,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-11"
-    },
-    {
-      "key": "TH-71",
-      "summary": "各SENTANの攻撃ダメージ設定、反映",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-71",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-38"
     },
     {
       "key": "TH-65",
@@ -573,19 +625,6 @@
       "issue_type_name": "エピック",
       "is_epic": true,
       "parent_key": null
-    },
-    {
-      "key": "TH-40",
-      "summary": "ベース：攻撃時コールバックを可能にする",
-      "status": "To Do",
-      "status_category": "new",
-      "start_date": null,
-      "due_date": null,
-      "assignee": "LE4B_17_ツユキ_イオリ",
-      "url": "https://nimaa2.atlassian.net/browse/TH-40",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-38"
     },
     {
       "key": "TH-34",
