@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-23T07:27:18.267006+00:00",
+  "generated_at": "2026-07-23T10:11:58.068349+00:00",
   "count": 63,
   "tasks": [
+    {
+      "key": "TH-67",
+      "summary": "ワープホールを作成する",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-22",
+      "due_date": "2026-07-23",
+      "assignee": "nima",
+      "url": "https://nimaa2.atlassian.net/browse/TH-67",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-29"
+    },
     {
       "key": "TH-69",
       "summary": "被弾処理",
@@ -40,19 +53,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-38"
-    },
-    {
-      "key": "TH-67",
-      "summary": "ワープホールを作成する",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-22",
-      "due_date": null,
-      "assignee": "nima",
-      "url": "https://nimaa2.atlassian.net/browse/TH-67",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-29"
     },
     {
       "key": "TH-68",
