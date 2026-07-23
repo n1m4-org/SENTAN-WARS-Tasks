@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-07-22T22:53:34.059269+00:00",
+  "generated_at": "2026-07-23T00:00:20.453672+00:00",
   "count": 61,
   "tasks": [
+    {
+      "key": "TH-55",
+      "summary": "ボス1を作成",
+      "status": "完了",
+      "status_category": "done",
+      "start_date": "2026-07-20",
+      "due_date": "2026-07-22",
+      "assignee": "ヤマグチ_タクト",
+      "url": "https://nimaa2.atlassian.net/browse/TH-55",
+      "issue_type_name": "タスク",
+      "is_epic": false,
+      "parent_key": "TH-13"
+    },
     {
       "key": "TH-66",
       "summary": "モデル : フィールド",
@@ -105,19 +118,6 @@
       "issue_type_name": "タスク",
       "is_epic": false,
       "parent_key": "TH-11"
-    },
-    {
-      "key": "TH-55",
-      "summary": "ボス1を作成",
-      "status": "進行中",
-      "status_category": "indeterminate",
-      "start_date": "2026-07-20",
-      "due_date": null,
-      "assignee": "ヤマグチ_タクト",
-      "url": "https://nimaa2.atlassian.net/browse/TH-55",
-      "issue_type_name": "タスク",
-      "is_epic": false,
-      "parent_key": "TH-13"
     },
     {
       "key": "TH-54",
